@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skynessah - Tanzania's Premier Online Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1556740738-b6a63ed27c26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link:hover {
+            color: #3b82f6;
+        }
+        
+        .delivery-banner {
+            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Top Announcement Bar -->
+    <div class="bg-blue-600 text-white text-center py-2 px-4">
+        <p class="text-sm">🔥 Free delivery in Dar es Salaam for orders above 50,000 TZS | Nationwide delivery available</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#home" class="text-2xl font-bold text-blue-600">Skynessah</a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#products" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Products</a>
+                        <a href="#about" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">About Us</a>
+                        <a href="#contact" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                        <a href="#account" class="flex items-center text-gray-700 hover:text-blue-500">
+                            <i class="fas fa-user mr-1"></i>
+                            <span class="text-sm font-medium">Account</span>
+                        </a>
+                        <a href="#cart" class="flex items-center text-gray-700 hover:text-blue-500 relative">
+                            <i class="fas fa-shopping-cart mr-1"></i>
+                            <span class="text-sm font-medium">Cart</span>
+                            <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-500 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">Home</a>
+                <a href="#products" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">Products</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">About Us</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">Contact</a>
+                <a href="#account" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">Account</a>
+                <a href="#cart" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">Cart (3)</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-white py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Shop Smart, Live Better</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Tanzania's premier online store with nationwide delivery. Quality products at affordable prices.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#products" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">Shop Now</a>
+                <a href="#about" class="bg-white hover:bg-gray-100 text-blue-600 font-bold py-3 px-8 rounded-lg transition duration-300">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Banner -->
+    <div class="delivery-banner text-white py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-3 md:mb-0">
+                    <i class="fas fa-truck text-2xl mr-3"></i>
+                    <span class="font-medium">Fast & Reliable Delivery Across Tanzania</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-shield-alt text-2xl mr-3"></i>
+                    <span class="font-medium">Secure Payments & Buyer Protection</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Categories -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Shop by Category</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <a href="#electronics" class="category-card bg-gray-100 rounded-lg p-6 text-center hover:bg-blue-50 transition duration-300">
+                    <i class="fas fa-laptop text-4xl text-blue-600 mb-3"></i>
+                    <h3 class="font-semibold text-lg">Electronics</h3>
+                    <p class="text-gray-600 text-sm mt-1">Smartphones, Laptops & more</p>
+                </a>
+                <a href="#fashion" class="category-card bg-gray-100 rounded-lg p-6 text-center hover:bg-blue-50 transition duration-300">
+                    <i class="fas fa-tshirt text-4xl text-blue-600 mb-3"></i>
+                    <h3 class="font-semibold text-lg">Fashion</h3>
+                    <p class="text-gray-600 text-sm mt-1">Clothing, Shoes & Accessories</p>
+                </a>
+                <a href="#home" class="category-card bg-gray-100 rounded-lg p-6 text-center hover:bg-blue-50 transition duration-300">
+                    <i class="fas fa-home text-4xl text-blue-600 mb-3"></i>
+                    <h3 class="font-semibold text-lg">Home & Living</h3>
+                    <p class="text-gray-600 text-sm mt-1">Furniture, Decor & Appliances</p>
+                </a>
+                <a href="#groceries" class="category-card bg-gray-100 rounded-lg p-6 text-center hover:bg-blue-50 transition duration-300">
+                    <i class="fas fa-shopping-basket text-4xl text-blue-600 mb-3"></i>
+                    <h3 class="font-semibold text-lg">Groceries</h3>
+                    <p class="text-gray-600 text-sm mt-1">Food, Beverages & Household</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Products -->
+    <section id="products" class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold">Popular Products</h2>
+                <a href="#all-products" class="text-blue-600 hover:underline font-medium">View All Products →</a>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Smartphone" class="w-full h-48 object-cover">
+                        <div class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">SALE</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-1">Samsung Galaxy S21</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm ml-2">(24 reviews)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-gray-500 line-through text-sm">1,250,000 TZS</span>
+                                <p class="text-blue-600 font-bold text-lg">999,000 TZS</p>
+                            </div>
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80" alt="Smartwatch" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-1">Apple Watch Series 7</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm ml-2">(18 reviews)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <p class="text-blue-600 font-bold text-lg">850,000 TZS</p>
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80" alt="Sneakers" class="w-full h-48 object-cover">
+                        <div class="absolute top-2 right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">NEW</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-1">Nike Air Max 270</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm ml-2">(32 reviews)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <p class="text-blue-600 font-bold text-lg">320,000 TZS</p>
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Blender" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-1">Moulinex Blender</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm ml-2">(15 reviews)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <p class="text-blue-600 font-bold text-lg">185,000 TZS</p>
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offer -->
+    <section class="py-12 bg-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center justify-between">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-4">Limited Time Offer!</h2>
+                    <p class="text-xl mb-6">Get 20% off on all electronics this week only. Use code <span class="font-bold bg-white text-blue-600 px-2 py-1 rounded">SKY20</span> at checkout.</p>
+                    <a href="#electronics" class="bg-white hover:bg-gray-100 text-blue-600 font-bold py-3 px-8 rounded-lg inline-block transition duration-300">Shop Electronics</a>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1526&q=80" alt="MacBook Pro" class="w-full max-w-md rounded-lg shadow-xl">
+                        <div class="absolute -bottom-4 -right-4 bg-yellow-400 text-blue-900 font-bold px-4 py-2 rounded-lg shadow-lg animate-pulse">
+                            <div class="flex items-center">
+                                <i class="fas fa-bolt mr-2"></i>
+                                <span>HOT DEAL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">What Our Customers Say</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-600 text-sm">5/5</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">"I ordered a smartphone and received it in Dar es Salaam within 24 hours! Excellent service and the product was exactly as described."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah J." class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-semibold">Sarah J.</h4>
+                            <p class="text-gray-600 text-sm">Dar es Salaam</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-gray-600 text-sm">4.5/5</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Delivery to Mwanza took 3 days which is impressive. The blender I bought works perfectly and was well packaged."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="John P." class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-semibold">John P.</h4>
+                            <p class="text-gray-600 text-sm">Mwanza</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <span class="text-gray-600 text-sm">4/5</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Great prices compared to local shops in Arusha. Customer service helped me track my order when there was a small delay."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Grace M." class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-semibold">Grace M.</h4>
+                            <p class="text-gray-600 text-sm">Arusha</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h2 class="text-3xl font-bold mb-6">About Skynessah</h2>
+                    <p class="text-gray-700 mb-4">Founded in 2018, Skynessah has grown to become one of Tanzania's most trusted online retailers. We started with a simple mission: to make quality products accessible to everyone across Tanzania at fair prices.</p>
+                    <p class="text-gray-700 mb-6">Today, we serve customers in all regions of Tanzania with fast, reliable delivery and exceptional customer service. Our team is passionate about connecting Tanzanians with the products they need to live better lives.</p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h3 class="font-bold text-blue-600 text-2xl mb-1">10,000+</h3>
+                            <p class="text-gray-600">Happy Customers</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h3 class="font-bold text-blue-600 text-2xl mb-1">24/7</h3>
+                            <p class="text-gray-600">Customer Support</p>
+                        </div>
+                    </div>
+                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block transition duration-300">Contact Us</a>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                            <i class="fas fa-truck text-3xl text-blue-600 mr-4"></i>
+                            <div>
+                                <h3 class="font-semibold mb-1">Fast Delivery</h3>
+                                <p class="text-gray-600 text-sm">Dar in 1-2 days, other regions 3-5 days</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                            <i class="fas fa-shield-alt text-3xl text-blue-600 mr-4"></i>
+                            <div>
+                                <h3 class="font-semibold mb-1">Secure Payments</h3>
+                                <p class="text-gray-600 text-sm">Multiple payment options</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                            <i class="fas fa-undo text-3xl text-blue-600 mr-4"></i>
+                            <div>
+                                <h3 class="font-semibold mb-1">Easy Returns</h3>
+                                <p class="text-gray-600 text-sm">14-day return policy</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                            <i class="fas fa-headset text-3xl text-blue-600 mr-4"></i>
+                            <div>
+                                <h3 class="font-semibold mb-1">Customer Support</h3>
+                                <p class="text-gray-600 text-sm">Always here to help</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Skynessah Team" class="mt-6 rounded-lg shadow-md w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-12 bg-blue-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">Stay Updated</h2>
+            <p class="text-gray-700 mb-8">Subscribe to our newsletter for exclusive deals, new arrivals, and special offers.</p>
+            <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-lg transition duration-300">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Contact Us</h2>
+            
+            <div class="md:flex gap-8">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">Get in Touch</h3>
+                        <p class="text-gray-700 mb-6">Have questions or need assistance? Our customer service team is ready to help you with any inquiries about products, orders, or deliveries.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-blue-600 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-medium">Address</h4>
+                                    <p class="text-gray-600">Mikocheni, Dar es Salaam, Tanzania</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt text-blue-600 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-medium">Phone</h4>
+                                    <p class="text-gray-600">+255 123 456 789</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-blue-600 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-medium">Email</h4>
+                                    <p class="text-gray-600">info@skynessah.co.tz</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-blue-600 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-medium">Working Hours</h4>
+                                    <p class="text-gray-600">Monday - Friday: 8:00 AM - 6:00 PM</p>
+                                    <p class="text-gray-600">Saturday: 9:00 AM - 4:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#facebook" class="bg-blue-700 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-800 transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#twitter" class="bg-blue-400 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-500 transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#instagram" class="bg-pink-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-pink-700 transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#whatsapp" class="bg-green-500 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-600 transition duration-300">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">Send Us a Message</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 mb-2">Full Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                                <select id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="">Select a subject</option>
+                                    <option value="order">Order Inquiry</option>
+                                    <option value="delivery">Delivery Question</option>
+                                    <option value="product">Product Information</option>
+                                    <option value="return">Return/Exchange</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 mb-2">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 w-full">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Skynessah</h3>
+                    <p class="text-gray-400 mb-4">Tanzania's premier online store offering quality products with nationwide delivery.</p>
+                    <div class="flex space-x-4">
+                        <a href="#facebook" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#twitter" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#instagram" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#whatsapp" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Shop</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#electronics" class="text-gray-400 hover:text-white transition duration-300">Electronics</a></li>
+                        <li><a href="#fashion" class="text-gray-400 hover:text-white transition duration-300">Fashion</a></li>
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home & Living</a></li>
+                        <li><a href="#groceries" class="text-gray-400 hover:text-white transition duration-300">Groceries</a></li>
+                        <li><a href="#beauty" class="text-gray-400 hover:text-white transition duration-300">Beauty & Health</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Customer Service</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact Us</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-white transition duration-300">FAQs</a></li>
+                        <li><a href="#shipping" class="text-gray-400 hover:text-white transition duration-300">Shipping Policy</a></li>
+                        <li><a href="#returns" class="text-gray-400 hover:text-white transition duration-300">Returns & Refunds</a></li>
+                        <li><a href="#privacy" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Payment Methods</h4>
+                    <div class="grid grid-cols-3 gap-4 mb-4">
+                        <div class="bg-gray-800 p-3 rounded flex items-center justify-center">
+                            <i class="fab fa-cc-mastercard text-2xl"></i>
+                        </div>
+                        <div class="bg-gray-800 p-3 rounded flex items-center justify-center">
+                            <i class="fab fa-cc-visa text-2xl"></i>
+                        </div>
+                        <div class="bg-gray-800 p-3 rounded flex items-center justify-center">
+                            <i class="fas fa-money-bill-wave text-2xl"></i>
+                        </div>
+                        <div class="bg-gray-800 p-3 rounded flex items-center justify-center">
+                            <i class="fab fa-cc-paypal text-2xl"></i>
+                        </div>
+                        <div class="bg-gray-800 p-3 rounded flex items-center justify-center">
+                            <i class="fas fa-mobile-alt text-2xl"></i>
+                        </div>
+                        <div class="bg-gray-800 p-3 rounded flex items-center justify-center">
+                            <i class="fas fa-university text-2xl"></i>
+                        </div>
+                    </div>
+                    <h4 class="font-semibold mb-2">Delivery Partners</h4>
+                    <div class="flex space-x-2">
+                        <span class="bg-gray-800 px-3 py-1 rounded text-sm">DHL</span>
+                        <span class="bg-gray-800 px-3 py-1 rounded text-sm">FedEx</span>
+                        <span class="bg-gray-800 px-3 py-1 rounded text-sm">Local Couriers</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 Skynessah. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#terms" class="text-gray-400 hover:text-white text-sm transition duration-300">Terms of Service</a>
+                    <a href="#privacy" class="text-gray-400 hover:text-white text-sm transition duration-300">Privacy Policy</a>
+                    <a href="#sitemap" class="text-gray-400 hover:text-white text-sm transition duration-300">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cart-sidebar" class="fixed inset-y-0 right-0 w-full md:w-96 bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+        <div class="flex flex-col h-full">
+            <div class="flex justify-between items-center border-b p-4">
+                <h3 class="text-lg font-semibold">Your Cart (3)</h3>
+                <button id="close-cart" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="flex-grow overflow-y-auto p-4">
+                <!-- Cart Item 1 -->
+                <div class="flex mb-4 pb-4 border-b">
+                    <div class="w-20 h-20 bg-gray-100 rounded overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Samsung Galaxy S21" class="w-full h-full object-cover">
+                    </div>
+                    <div class="ml-4 flex-grow">
+                        <h4 class="font-medium">Samsung Galaxy S21</h4>
+                        <p class="text-gray-600 text-sm">Color: Phantom Black</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <div class="flex items-center border rounded">
+                                <button class="px-2 py-1 text-gray-600 hover:bg-gray-100">-</button>
+                                <span class="px-2">1</span>
+                                <button class="px-2 py-1 text-gray-600 hover:bg-gray-100">+</button>
+                            </div>
+                            <p class="font-semibold">999,000 TZS</p>
+                        </div>
+                    </div>
+                    <button class="text-gray-400 hover:text-red-500 ml-2">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+                
+                <!-- Cart Item 2 -->
+                <div class="flex mb-4 pb-4 border-b">
+                    <div class="w-20 h-20 bg-gray-100 rounded overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80" alt="Nike Air Max 270" class="w-full h-full object-cover">
+                    </div>
+                    <div class="ml-4 flex-grow">
+                        <h4 class="font-medium">Nike Air Max 270</h4>
+                        <p class="text-gray-600 text-sm">Size: 42</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <div class="flex items-center border rounded">
+                                <button class="px-2 py-1 text-gray-600 hover:bg-gray-100">-</button>
+                                <span class="px-2">1</span>
+                                <button class="px-2 py-1 text-gray-600 hover:bg-gray-100">+</button>
+                            </div>
+                            <p class="font-semibold">320,000 TZS</p>
+                        </div>
+                    </div>
+                    <button class="text-gray-400 hover:text-red-500 ml-2">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+                
+                <!-- Cart Item 3 -->
+                <div class="flex mb-4">
+                    <div class="w-20 h-20 bg-gray-100 rounded overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Moulinex Blender" class="w-full h-full object-cover">
+                    </div>
+                    <div class="ml-4 flex-grow">
+                        <h4 class="font-medium">Moulinex Blender</h4>
+                        <p class="text-gray-600 text-sm">Model: LM242</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <div class="flex items-center border rounded">
+                                <button class="px-2 py-1 text-gray-600 hover:bg-gray-100">-</button>
+                                <span class="px-2">1</span>
+                                <button class="px-2 py-1 text-gray-600 hover:bg-gray-100">+</button>
+                            </div>
+                            <p class="font-semibold">185,000 TZS</p>
+                        </div>
+                    </div>
+                    <button class="text-gray-400 hover:text-red-500 ml-2">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="border-t p-4">
+                <div class="flex justify-between mb-2">
+                    <span class="text-gray-600">Subtotal</span>
+                    <span class="font-semibold">1,504,000 TZS</span>
+                </div>
+                <div class="flex justify-between mb-2">
+                    <span class="text-gray-600">Delivery</span>
+                    <span class="font-semibold">15,000 TZS</span>
+                </div>
+                <div class="flex justify-between mb-4">
+                    <span class="text-gray-600">Tax</span>
+                    <span class="font-semibold">90,240 TZS</span>
+                </div>
+                <div class="flex justify-between text-lg font-bold border-t pt-3 mb-4">
+                    <span>Total</span>
+                    <span>1,609,240 TZS</span>
+                </div>
+                <a href="#checkout" class="block bg-blue-600 hover:bg-blue-700 text-white text-center font-bold py-3 px-4 rounded-lg transition duration-300 mb-2">Proceed to Checkout</a>
+                <a href="#continue" class="block text-center text-blue-600 hover:underline">Continue Shopping</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Shopping cart toggle
+        const cartButtons = document.querySelectorAll('[href="#cart"]');
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const closeCartButton = document.getElementById('close-cart');
+        
+        cartButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                cartSidebar.classList.remove('translate-x-full');
+            });
+        });
+        
+        closeCartButton.addEventListener('click', () => {
+            cartSidebar.classList.add('translate-x-full');
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#cart') return;
+                
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
